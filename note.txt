@@ -1,0 +1,1 @@
+1.delete fs in app.js and delete id 001 when u start using mongodb.
