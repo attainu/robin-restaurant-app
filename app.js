@@ -1,7 +1,9 @@
 const express = require('express');
-const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
+
+const globalErrorHandler = require('./controllers/errorController');
+const AppError = require('./utils/appError');
 
 const app = express();
 //+++======================-------====MIDDLEWEARS======--------===================+++//
@@ -20,6 +22,7 @@ app.use((req, res, next) => {
     next();
 });
 
+
 //+++=========================-------====ROUTES======--------===================+++//
 
 //(1) menurouter
@@ -31,17 +34,15 @@ const userRout = require('./routes/users.js');
 app.use('api/v1/users', userRout);
 
 
+// app.use('/api/v1/', menuRout);
+// app.use('/api/v1/users', userRout);
 
-//+++=========================-------====CONNECT-----DATA----BASE======--------===================+++//
-mongoose.connect('mongodb://127.0.0.1:27017/restaurant', {
-    useUnifiedTopology: true,
-    useNewUrlParser: true,
-    useFindAndModify: false,
-    useCreateIndex: true
-})
-    .then(() => {
-        console.log('Restaurant data base is connected ');
-    });
+//+++=======================error handling for ==--unhandled or not defined routes-===================+++//
+app.all('*', (req, res, next) => {
+    next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
+});
+
+app.use(globalErrorHandler);
 
 
 

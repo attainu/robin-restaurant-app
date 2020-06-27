@@ -8,10 +8,20 @@ exports.getAllusers = async (res, req) => {
 };
 
 exports.createUser = async (res, req) => {
-    res.status(500).json({
-        status: 'error',
-        message: 'construct me and get all list of users !!'
-    });
+
+    try {
+        const newItem = await menuModel.create(req.body);
+
+        const savemenu = await newItem.save();
+        res.json(savemenu);
+
+
+    } catch (err) {
+        res.status(500).json({
+            status: 'error',
+            message: 'construct me and get all list of users !!'
+        });
+    }
 };
 
 exports.getUser = async (res, req) => {

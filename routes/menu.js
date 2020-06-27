@@ -2,8 +2,13 @@ const router = require('express').Router();
 const menuController = require('./../controllers/menuController');
 
 
-router.route('/bestseller').get(menuController.bestseller, menuController.getAllmenu);
 
+router
+    .route('/bestseller')
+    .get(menuController.bestseller, menuController.getAllmenu);
+router
+    .route('/stats')
+    .get(menuController.MenuStats);
 router
     .route('/')
     .get(menuController.getAllmenu)
@@ -11,7 +16,7 @@ router
 
 router
     .route('/:id')
-    .get(menuController.itemById)
+    .get(menuController.getOneItem)
     .delete(menuController.deleteItem)
     .patch(menuController.updateItem);
 
