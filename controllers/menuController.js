@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-=======
+
 const menuModel = require('../model/menuSch');
 const { Query } = require('mongoose');
 const { } = require('../app');
@@ -112,4 +111,3 @@ exports.MenuStats = catchAsync(async (req, res, next) => {
         data: stats
     });
 });
->>>>>>> bc5781afdbe125cdf3f93dfbb4912aff918ee7b1

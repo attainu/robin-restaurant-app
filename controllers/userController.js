@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-=======
+
 const userModel = require('../model/userSch.js');
 
 exports.getAllusers = function (res, req) {
@@ -15,7 +14,7 @@ exports.getAllusers = function (res, req) {
 }
 
 exports.createUser = async (res, req) => {
-<<<<<<< HEAD
+
 
     try {
         const newItem = await menuModel.create(req.body);
@@ -29,7 +28,7 @@ exports.createUser = async (res, req) => {
             status: 'error',
             message: 'construct me and get all list of users !!'
         });
-=======
+
     const newUser = await userModel.create(req.body);
     
     try {
@@ -38,7 +37,7 @@ exports.createUser = async (res, req) => {
 
     } catch (err) {
         res.status(400).json(err)
->>>>>>> 208a896b52cb617dc2fe264b1c1c7b1e425d753d
+
     }
 };
 
@@ -62,4 +61,3 @@ exports.deleteUser = async (res, req) => {
         message: 'construct me and get all list of users !!'
     });
 };
->>>>>>> bc5781afdbe125cdf3f93dfbb4912aff918ee7b1

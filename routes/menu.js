@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-=======
+
 const router = require('express').Router();
 const menuController = require('./../controllers/menuController');
 
@@ -25,4 +24,3 @@ router
 //+++=====================================-------==========--------=============================+++//
 
 module.exports = router;
->>>>>>> bc5781afdbe125cdf3f93dfbb4912aff918ee7b1
