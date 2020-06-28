@@ -1,9 +1,15 @@
 const express = require('express');
-const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const helmet = require('helmet');
 
+<<<<<<< HEAD
+=======
+const globalErrorHandler = require('./controllers/errorController');
+const AppError = require('./utils/appError');
+
+const app = express();
+>>>>>>> bc5781afdbe125cdf3f93dfbb4912aff918ee7b1
 
 
 const AppError = require('./utils/appError');
@@ -31,6 +37,7 @@ app.use((req, res, next) => {
     next();
 });
 
+
 //+++=========================-------====ROUTES======--------===================+++//
 
 //(1) menurouter
@@ -43,11 +50,24 @@ app.use('/api/v1/users', userRout);
 
 //========
 
+<<<<<<< HEAD
 app.all('*', (req, res, next) => {
     next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
 });
 
 app.use(globalErrorHandler);
+=======
+// app.use('/api/v1/', menuRout);
+// app.use('/api/v1/users', userRout);
+
+//+++=======================error handling for ==--unhandled or not defined routes-===================+++//
+app.all('*', (req, res, next) => {
+    next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
+});
+
+app.use(globalErrorHandler);
+
+>>>>>>> bc5781afdbe125cdf3f93dfbb4912aff918ee7b1
 
 
 // /export app
