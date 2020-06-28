@@ -5,17 +5,19 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js",
-    "startAuth":"nodemon authServer.js"
+    "start": "nodemon server.js"
   },
   "author": "aaqib bhat",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "helmet": "^3.23.3",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.9.20",
+    "mongoose": "^5.9.18",
     "morgan": "^1.10.0",
-    "nodemon": "^2.0.4"
+    "nodemailer": "^6.4.10",
+    "validator": "^13.1.1"
   }
 }
