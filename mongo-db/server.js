@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 const app = require('./app');
 const mongoose = require('mongoose');
 
@@ -20,3 +22,4 @@ mongoose.connect('mongodb://127.0.0.1:27017/restaurant', {
 =======
 });
 >>>>>>> 208a896b52cb617dc2fe264b1c1c7b1e425d753d
+>>>>>>> bc5781afdbe125cdf3f93dfbb4912aff918ee7b1
